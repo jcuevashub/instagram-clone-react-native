@@ -1,35 +1,36 @@
-import { View, Text, TextInput, Button, StyleSheet, Pressable, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Pressable } from 'react-native'
+import React from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Validator from 'email-validator';
 
-const LoginForm = ({navigation}) => {
-  const LoginFormSchema = Yup.object().shape({
+const SignUpForm = ({navigation}) => {
+  const SignUpFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
+    username: Yup.string().required().min(2, 'A username is required'),
     password: Yup.string().required().min(6, 'Your password has to have at least 6 characters')
   });
 
   return (
     <View style={styles.wrapper}>
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ email: '', username: '', password: '' }}
         onSubmit={values => {
           console.log(values)
         }}
-        validationSchema={LoginFormSchema}
+        validationSchema={SignUpFormSchema}
         validateOnMount={true}
       >
         {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
           <>
             <View style={[styles.inputField,
-              {
-                borderColor: values.email.length < 1 || Validator.validate(values.email) ? '#ccc' : 'red'
-              }
+            {
+              borderColor: values.email.length < 1 || Validator.validate(values.email) ? '#ccc' : 'red'
+            }
             ]}>
               <TextInput
                 placeholderTextColor='#444'
-                placeholder='Phone number, username or email'
+                placeholder='Email'
                 autoCapitalize='none'
                 keyboardType='email-address'
                 textContentType='emailAddress'
@@ -40,9 +41,26 @@ const LoginForm = ({navigation}) => {
               />
             </View>
             <View style={[styles.inputField,
-              {
-                borderColor: 1 > values.password.length || values.password.length >= 6 ? '#ccc' : 'red'
-              }
+            {
+              borderColor: 1 > values.username.length || values.username.length >+ 6 ? '#ccc' : 'red'
+            }
+            ]}>
+              <TextInput
+                placeholderTextColor='#444'
+                placeholder='Username'
+                autoCapitalize='none'
+                keyboardType='email-address'
+                textContentType='emailAddress'
+                outoFocus={true}
+                onChangeText={handleChange('username')}
+                onBlur={handleBlur('username')}
+                value={values.username}
+              />
+            </View>
+            <View style={[styles.inputField,
+            {
+              borderColor: 1 > values.password.length || values.password.length >= 6 ? '#ccc' : 'red'
+            }
             ]}>
               <TextInput
                 placeholderTextColor='#444'
@@ -56,22 +74,18 @@ const LoginForm = ({navigation}) => {
                 value={values.password}
               />
             </View>
-            <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
-              <TouchableOpacity>
-                <Text style={{ color: '#6BB0F5' }}>Forgot password?</Text>
-              </TouchableOpacity>
-            </View>
+
             <Pressable
               style={styles.button(isValid)}
               onPress={handleSubmit}
               disabled={!isValid}
             >
-              <Text style={styles.buttonText}>Log In</Text>
+              <Text style={styles.buttonText}>Sign Up</Text>
             </Pressable>
             <View style={styles.signupContainer}>
-              <Text>Don't have an account?</Text>
-              <TouchableOpacity onPress={() => navigation.push('SignUpScreen')}>
-                <Text style={{ color: '#6BB0F5' }}>{' '}Sign Up</Text>
+              <Text>Already have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Text style={{ color: '#6BB0F5' }}>{' '}Log In</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -97,7 +111,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 42,
-    borderRadius: 4
+    borderRadius: 4,
+    marginTop: 50
   }),
   buttonText: {
     color: 'white',
@@ -111,4 +126,4 @@ const styles = StyleSheet.create({
     marginTop: 50
   }
 })
-export default LoginForm
+export default SignUpForm
