@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import FormikPostUploader from './FormikPostUploader'
 
 const AddNewPost = () => (
     <View style={styles.container}>
         <Header />
-
+        <FormikPostUploader />
     </View>
 )
 
@@ -22,6 +23,7 @@ const Header = () => {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 10
@@ -38,4 +40,4 @@ const styles = StyleSheet.create({
         marginRight: 25
     }
 })
-export default Header
+export default AddNewPost
