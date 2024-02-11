@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik'
 import {  Divider } from 'react-native-elements';
+import validUrl  from 'valid-url'
 
 
 const PLACEHOLDER_IMG = '../../assets/place_holder.jpg'
@@ -33,7 +34,7 @@ const FormikPostUploader = ({navigation}) => {
                         justifyContent: 'space-between',
                         flexDirection: 'row'
                     }}>
-                        <Image source={thumbnailUrl ? {uri: thumbnailUrl} : require(PLACEHOLDER_IMG)} style={{ width: 100, height: 100 }} />
+                        <Image source={thumbnailUrl ? {uri: validUrl.isUri(thumbnailUrl)} : require(PLACEHOLDER_IMG)} style={{ width: 100, height: 100 }} />
 
                         <View style={{ flex: 1, marginLeft: 12 }}>
                             <TextInput
