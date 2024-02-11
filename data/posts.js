@@ -10,7 +10,15 @@ export const POSTS = [
         "comments": [
             {
                 "user": "amandaanderson",
-                "comments": "Million development should here home."
+                "comment": "Million development should here home."
+            },
+            {
+                "user": "charles31",
+                "comment": "Place year nation second worker student."
+            },
+            {
+                "user": "charles31",
+                "comment": "Matter reason law."
             }
         ]
     },
@@ -23,7 +31,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "charles31",
-                "comments": "Matter reason law."
+                "comment": "Matter reason law."
             }
         ]
     },
@@ -36,7 +44,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "kristi11",
-                "comments": "Well cultural lot parent away."
+                "comment": "Well cultural lot parent away."
             }
         ]
     },
@@ -49,7 +57,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "charles31",
-                "comments": "Radio debate significant teach to memory last."
+                "comment": "Radio debate significant teach to memory last."
             }
         ]
     },
@@ -62,7 +70,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "ostein",
-                "comments": "Resource occur town politics."
+                "comment": "Resource occur town politics."
             }
         ]
     },
@@ -75,7 +83,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "lauraellis",
-                "comments": "Your scientist which involve free."
+                "comment": "Your scientist which involve free."
             }
         ]
     },
@@ -88,7 +96,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "michelle91",
-                "comments": "Another position strong."
+                "comment": "Another position strong."
             }
         ]
     },
@@ -101,7 +109,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "ucox",
-                "comments": "Open rock guy however practice."
+                "comment": "Open rock guy however practice."
             }
         ]
     },
@@ -114,7 +122,7 @@ export const POSTS = [
         "comments": [
             {
                 "user": "charles31",
-                "comments": "Place year nation second worker student."
+                "comment": "Place year nation second worker student."
             }
         ]
     },
@@ -127,8 +135,29 @@ export const POSTS = [
         "comments": [
             {
                 "user": "michelle91",
-                "comments": "Quite worker father despite difficult shoulder oil."
+                "comment": "Quite worker father despite difficult shoulder oil."
             }
         ]
+    }
+]
+
+
+export const postFooterIcons = [
+    {
+        name: 'Like',
+        imageUrl: require('../assets/heart_icon.png'),
+        likedImageUrl: require('../assets/filled_heart_icon.png')
+    },
+    {
+        name: 'Comment',
+        imageUrl: require('../assets/comment_icon.png'),
+    },
+    {
+        name: 'Share',
+        imageUrl: require('../assets/send_icon.png'),
+    },
+    {
+        name: 'Save',
+        imageUrl: require('../assets/save_icon.png'),
     }
 ]

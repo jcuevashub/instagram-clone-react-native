@@ -117,8 +117,7 @@ const styles = StyleSheet.create({
     footerIcon: {
         width: 30,
         height: 30,
-        resizeMode: 'contain',
-        tintColor: 'white',
+        resizeMode: 'contain'
     },
     leftFooterIconsContainer: {
         flexDirection: 'row',
