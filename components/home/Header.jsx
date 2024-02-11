@@ -1,13 +1,16 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const Header = () => {
+const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity>
                 <Image style={styles.logo} source={require('../../assets/Instagram_logo.svg.png')} />
             </TouchableOpacity>
             <View style={styles.iconContiner}>
+                <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
+                    <Image source={require('../../assets/plus_icon.png')} style={styles.icon} />
+                </TouchableOpacity>
                 <TouchableOpacity>
                     <Image source={require('../../assets/heart_icon.png')} style={styles.icon} />
                 </TouchableOpacity>

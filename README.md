@@ -25,6 +25,17 @@
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
   - Web: Any web browser
 
+  ## Packages
+  - yarn add react-native-elements
+  - yarn add react-native-safe-area-view 
+  - yarn add react-native-safe-area-context
+  - yarn add formik
+  - yarn add yup
+  - yarn add @react-navigation/native
+  - yarn add @react-navigation/stack
+  - yarn add react-native-gesture-handler
+  - yarn add valid-url
+
 ## Running/Modifying Native Code
 
 You can generate native iOS and Android projects from your Expo config file (**app.json**/ **app.config.js**) by runnning `npx expo prebuild`. These native projects can then be compiled and run via XCode and Android Studio.

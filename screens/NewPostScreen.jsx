@@ -2,10 +2,10 @@ import { View, Text, SafeAreaView,StyleSheet } from 'react-native'
 import React from 'react'
 import Header from '../components/newPost/AddNewPost'
 
-const NewPostScreen = () => {
+const NewPostScreen = ({navigation}) => {
     return (
         <SafeAreaView style={{backgroundColor: 'black', flex: 1}}>
-            <Header />
+            <Header navigation={navigation} />
         </SafeAreaView>
     )
 }
