@@ -2,10 +2,15 @@ import { View, Text, StyleSheet, Image } from 'react-native'
 import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
+
     useEffect(() => {
-        // SplashScreen.hide(); // Hide the splash screen after your app is loaded
-    }, []);
+        const timer = setTimeout(() => {
+            navigation.push('HomeScreen')
+        }, 2000); 
+
+        return () => clearTimeout(timer);
+    }, [navigation]);
 
     return (
         <SafeAreaView style={styles.container}>
