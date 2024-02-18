@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
-
+import { View, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { Divider } from 'react-native-elements'
-import { Touchable } from 'react-native'
+import { useRoute } from '@react-navigation/native';
 
 export const bottomTabIcons = [
     {
@@ -25,23 +24,31 @@ export const bottomTabIcons = [
         active: require('../../assets/instagram_reels_active_icon.png'),
         inactive: require('../../assets/instagram_reels_inactive_icon.png'),
     },
- 
     {
         name: 'Profile',
         active: "https://i.pravatar.cc/150?img=3",
     },
 ]
 
-const BottomTabs = ({ icons }) => {
+
+
+const BottomTabs = ({ icons, navigation }) => {
     const [activeTab, setActiveTab] = useState('Home');
+    const route = useRoute();
 
     const Icon = ({ icon }) => (
-        <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
-            <Image 
-            source={icon.name === 'Profile' ? {uri: icon.active} : activeTab === icon.name ? icon.active : icon.inactive} 
-            style={[styles.icon, icon.name === 'Profile' ? styles.profilePic() : null,
-            activeTab === 'Profile' && icon.name === activeTab ? styles.profilePic(activeTab) : null
-            ]} />
+        <TouchableOpacity onPress={() => {
+            setActiveTab(icon.name);
+
+            if (icon.name === 'Profile' && route.name != 'ProfileScreen') {
+                navigation.push('ProfileScreen');
+            }
+        }}>
+            <Image
+                source={icon.name === 'Profile' ? { uri: icon.active } : activeTab === icon.name ? icon.active : icon.inactive}
+                style={[styles.icon, icon.name === 'Profile' ? styles.profilePic() : null,
+                activeTab === 'Profile' && icon.name === activeTab ? styles.profilePic(activeTab) : null
+                ]} />
         </TouchableOpacity>
     )
 

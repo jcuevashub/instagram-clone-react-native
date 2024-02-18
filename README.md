@@ -37,7 +37,9 @@
   - yarn add valid-url
   - yarn add email-validator
   - yarn add react-native-linear-gradient
-  - npx expo install expo-linear-gradient 
+  - npx expo install expo-linear-gradient
+  - yarn add @react-navigation/material-top-tabs react-native-tab-view
+  - npx expo install react-native-pager-view 
 
 ## Running/Modifying Native Code
 

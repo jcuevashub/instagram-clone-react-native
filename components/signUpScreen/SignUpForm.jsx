@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Validator from 'email-validator';
 
-const SignUpForm = ({navigation}) => {
+const SignUpForm = ({ navigation }) => {
   const SignUpFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
     username: Yup.string().required().min(2, 'A username is required'),
@@ -29,11 +29,12 @@ const SignUpForm = ({navigation}) => {
             }
             ]}>
               <TextInput
-                placeholderTextColor='#444'
+                placeholderTextColor='gray'
                 placeholder='Email'
                 autoCapitalize='none'
                 keyboardType='email-address'
                 textContentType='emailAddress'
+                color='white'
                 outoFocus={true}
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
@@ -42,15 +43,16 @@ const SignUpForm = ({navigation}) => {
             </View>
             <View style={[styles.inputField,
             {
-              borderColor: 1 > values.username.length || values.username.length >+ 6 ? '#ccc' : 'red'
+              borderColor: 1 > values.username.length || values.username.length > + 6 ? '#ccc' : 'red'
             }
             ]}>
               <TextInput
-                placeholderTextColor='#444'
+                placeholderTextColor='gray'
                 placeholder='Username'
                 autoCapitalize='none'
                 keyboardType='email-address'
                 textContentType='emailAddress'
+                color='white'
                 outoFocus={true}
                 onChangeText={handleChange('username')}
                 onBlur={handleBlur('username')}
@@ -83,9 +85,9 @@ const SignUpForm = ({navigation}) => {
               <Text style={styles.buttonText}>Sign Up</Text>
             </Pressable>
             <View style={styles.signupContainer}>
-              <Text>Already have an account?</Text>
+              <Text style={styles.textColor}>Already have an account?</Text>
               <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text style={{ color: '#6BB0F5' }}>{' '}Log In</Text>
+                <Text style={styles.textColor}>{' '}Log In</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -124,6 +126,9 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     marginTop: 50
+  },
+  textColor: {
+    color: 'white'
   }
 })
 export default SignUpForm

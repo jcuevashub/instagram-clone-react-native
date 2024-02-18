@@ -2,7 +2,6 @@ import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert, 
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import firebase from '../../firebase'
 
 const LoginForm = ({ navigation }) => {
   const LoginFormSchema = Yup.object().shape({
@@ -12,8 +11,8 @@ const LoginForm = ({ navigation }) => {
 
   const onLogin = async (email, password) => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
-      console.log("Firebase Login Successfull");
+      navigation.push('HomeScreen')
+      Alert.alert("Firebase Login Successfull")
     } catch (error) {
       Alert.alert(error.message)
     }
@@ -24,8 +23,7 @@ const LoginForm = ({ navigation }) => {
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={values => {
-          navigation.push('HomeScreen')
-          //onLogin(values.email, values.password);
+          onLogin(values.email, values.password)
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
@@ -38,11 +36,12 @@ const LoginForm = ({ navigation }) => {
             }
             ]}>
               <TextInput
-                placeholderTextColor='#444'
+                placeholderTextColor='gray'
                 placeholder='Phone number, username or email'
                 autoCapitalize='none'
                 keyboardType='email-address'
                 textContentType='emailAddress'
+                color='white'
                 outoFocus={true}
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
@@ -55,12 +54,13 @@ const LoginForm = ({ navigation }) => {
             }
             ]}>
               <TextInput
-                placeholderTextColor='#444'
+                placeholderTextColor='gray'
                 placeholder='Password'
                 autoCapitalize='none'
                 outoCorrect={false}
                 secureTextEntry={true}
                 textContentType='password'
+                color='white'
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
@@ -68,7 +68,7 @@ const LoginForm = ({ navigation }) => {
             </View>
             <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
               <TouchableOpacity>
-                <Text style={{ color: '#6BB0F5' }}>Forgot password?</Text>
+                <Text style={styles.textColor}>Forgot password?</Text>
               </TouchableOpacity>
             </View>
 
@@ -80,9 +80,9 @@ const LoginForm = ({ navigation }) => {
               <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
             <View style={styles.signupContainer}>
-              <Text>Don't have an account?</Text>
+              <Text style={styles.textColor}>Don't have an account?</Text>
               <TouchableOpacity onPress={() => navigation.push('SignUpScreen')}>
-                <Text style={{ color: '#6BB0F5' }}>{' '}Sign Up</Text>
+                <Text style={styles.textColor}>{' '}Sign Up</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     marginTop: 80
   },
   inputField: {
-    backgroundColor: '#FAFAFA',
     borderRadius: 4,
     borderWidth: 1,
     marginBottom: 10,
@@ -120,6 +119,9 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     marginTop: 50
+  },
+  textColor: {
+    color: 'white'
   }
 })
 export default LoginForm
