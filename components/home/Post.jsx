@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Divider } from 'react-native-elements'
 import { postFooterIcons } from '../../data/posts'
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 const Post = ({ post }) => {
@@ -15,7 +16,7 @@ const Post = ({ post }) => {
                 <Likes post={post} />
                 <Caption post={post} />
                 <CommentsSection post={post} />
-                <Comments post={post}/>
+                <Comments post={post} />
             </View>
 
         </View>
@@ -30,7 +31,12 @@ const PostHeader = ({ post }) => (
         alignItems: 'center'
     }}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Image source={{ uri: post.profile_picture }} style={styles.story} />
+            <LinearGradient
+                colors={['#F2703F', '#E35157', '#CA1D7E']}
+                start={{ x: 0.0, y: 1.0 }} end={{ x: 1.0, y: 1.0 }}
+                style={styles.storyGradient}>
+                <Image source={{ uri: post.profile_picture }} style={styles.story} />
+            </LinearGradient>
             <Text style={{ color: 'white', marginLeft: 5, fontWeight: '700' }}>{post.user}</Text>
         </View>
         <Text style={{ color: 'white', fontWeight: '900' }}>...</Text>
@@ -94,9 +100,9 @@ const CommentsSection = ({ post }) => (
 const Comments = ({ post }) => (
     <>
         {post.comments.map((comment, index) => (
-            <View key={index} style={{flexDirection: 'row', marginTop: 5}}>
+            <View key={index} style={{ flexDirection: 'row', marginTop: 5 }}>
                 <Text style={{ color: 'white' }}>
-                    <Text style={{fontWeight: '600'}}>{comment.user}</Text>
+                    <Text style={{ fontWeight: '600' }}>{comment.user}</Text>
                     {' '}{comment.comment}
                 </Text>
             </View>
@@ -105,19 +111,27 @@ const Comments = ({ post }) => (
 )
 
 const styles = StyleSheet.create({
+    storyGradient: {
+        height: 38,
+        width: 38,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 82 / 2,
+        margin: 5,
+    },
     story: {
         width: 35,
         height: 35,
-        borderRadius: 50,
-        marginLeft: 10,
-        borderWidth: 1.6,
-        borderColor: '#ff8501',
-        marginBottom: 5
+        borderRadius: 75 / 2,
+        alignSelf: 'center',
+        borderColor: '#000',
+        borderWidth: 2,
     },
     footerIcon: {
         width: 30,
         height: 30,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        tintColor: 'white'
     },
     leftFooterIconsContainer: {
         flexDirection: 'row',

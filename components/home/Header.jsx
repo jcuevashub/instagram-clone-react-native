@@ -5,12 +5,9 @@ const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity>
-                <Image style={styles.logo} source={require('../../assets/Instagram_logo.svg.png')} />
+                <Image style={styles.logo} source={require('../../assets/instagram_logo_name.png')} />
             </TouchableOpacity>
             <View style={styles.iconContiner}>
-                <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
-                    <Image source={require('../../assets/plus_icon.png')} style={styles.icon} />
-                </TouchableOpacity>
                 <TouchableOpacity>
                     <Image source={require('../../assets/heart_icon.png')} style={styles.icon} />
                 </TouchableOpacity>
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     logo: {
-        width: 100,
+        width: 120,
         height: 50,
         resizeMode: 'contain',
         tintColor: 'white'

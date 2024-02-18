@@ -36,7 +36,8 @@
   - yarn add react-native-gesture-handler
   - yarn add valid-url
   - yarn add email-validator
-  - yarn add firebase
+  - yarn add react-native-linear-gradient
+  - npx expo install expo-linear-gradient 
 
 ## Running/Modifying Native Code
 

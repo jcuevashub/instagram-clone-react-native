@@ -5,7 +5,7 @@ import LoginForm from '../components/loginScreen/LoginForm'
 const LoginScreen = ({navigation}) => (
     <View style={styles.container}>
         <View style={styles.logoContainer}>
-            <Image  source={require('../assets/instagram_logo.png')}/>
+            <Image  source={require('../assets/instagram_logo_new.png')}/>
         </View>
         <LoginForm navigation={navigation}/>
     </View>

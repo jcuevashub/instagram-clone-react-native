@@ -5,7 +5,7 @@ import SignUpForm from '../components/signUpScreen/SignUpForm'
 const SignUpScreen = ({navigation}) => (
     <View style={styles.container}>
         <View style={styles.logoContainer}>
-            <Image  source={require('../assets/instagram_logo.png')}/>
+            <Image  source={require('../assets/instagram_logo_new.png')}/>
         </View>
         <SignUpForm navigation={navigation}/>
     </View>

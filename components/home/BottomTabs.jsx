@@ -16,15 +16,16 @@ export const bottomTabIcons = [
         inactive: require('../../assets/search_inactive_icon.png'),
     },
     {
+        name: 'Add',
+        active: require('../../assets/plus_icon.png'),
+        inactive: require('../../assets/plus_icon.png'),
+    },
+    {
         name: 'Reels',
         active: require('../../assets/instagram_reels_active_icon.png'),
         inactive: require('../../assets/instagram_reels_inactive_icon.png'),
     },
-    {
-        name: 'Shop',
-        active: require('../../assets/shopping_bag_active_icon.png'),
-        inactive: require('../../assets/shopping_bag_inactive_icon.png'),
-    },
+ 
     {
         name: 'Profile',
         active: "https://i.pravatar.cc/150?img=3",
