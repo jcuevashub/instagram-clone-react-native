@@ -36,6 +36,7 @@
   - yarn add react-native-gesture-handler
   - yarn add valid-url
   - yarn add email-validator
+  - yarn add firebase
 
 ## Running/Modifying Native Code
 

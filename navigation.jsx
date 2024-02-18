@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen'
 import NewPostScreen from './screens/NewPostScreen'
 import LoginScreen from './screens/LoginScreen'
 import SignUpScreen from './screens/SignUpScreen'
+import SplashScreen from './screens/SplashScreen'
 
 const Stack = createStackNavigator();
 
@@ -15,8 +16,9 @@ const screenOptions = {
 const SignedInStack = () => (
     <NavigationContainer>
         <Stack.Navigator
-            initialRouteName='LoginScreen'
+            initialRouteName='SplashScreen'
             screenOptions={screenOptions}>
+            <Stack.Screen name='SplashScreen' component={SplashScreen} />
             <Stack.Screen name='HomeScreen' component={HomeScreen} />
             <Stack.Screen name='NewPostScreen' component={NewPostScreen} />
             <Stack.Screen name='LoginScreen' component={LoginScreen} />

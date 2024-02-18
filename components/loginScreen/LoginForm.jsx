@@ -1,21 +1,31 @@
-import { View, Text, TextInput, Button, StyleSheet, Pressable, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react';
+import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert, TouchableHighlight } from 'react-native'
+import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import Validator from 'email-validator';
+import firebase from '../../firebase'
 
-const LoginForm = ({navigation}) => {
+const LoginForm = ({ navigation }) => {
   const LoginFormSchema = Yup.object().shape({
-    email: Yup.string().email().required('An email is required'),
+    email: Yup.string().required('An email is required'),
     password: Yup.string().required().min(6, 'Your password has to have at least 6 characters')
   });
+
+  const onLogin = async (email, password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      console.log("Firebase Login Successfull");
+    } catch (error) {
+      Alert.alert(error.message)
+    }
+  }
 
   return (
     <View style={styles.wrapper}>
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={values => {
-          console.log(values)
+          navigation.push('HomeScreen')
+          //onLogin(values.email, values.password);
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
@@ -23,9 +33,9 @@ const LoginForm = ({navigation}) => {
         {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
           <>
             <View style={[styles.inputField,
-              {
-                borderColor: values.email.length < 1 || Validator.validate(values.email) ? '#ccc' : 'red'
-              }
+            {
+              borderColor: 1 > values.email.length || values.email.length >= 6 ? '#ccc' : 'red'
+            }
             ]}>
               <TextInput
                 placeholderTextColor='#444'
@@ -40,9 +50,9 @@ const LoginForm = ({navigation}) => {
               />
             </View>
             <View style={[styles.inputField,
-              {
-                borderColor: 1 > values.password.length || values.password.length >= 6 ? '#ccc' : 'red'
-              }
+            {
+              borderColor: 1 > values.password.length || values.password.length >= 6 ? '#ccc' : 'red'
+            }
             ]}>
               <TextInput
                 placeholderTextColor='#444'
@@ -61,6 +71,7 @@ const LoginForm = ({navigation}) => {
                 <Text style={{ color: '#6BB0F5' }}>Forgot password?</Text>
               </TouchableOpacity>
             </View>
+
             <Pressable
               style={styles.button(isValid)}
               onPress={handleSubmit}

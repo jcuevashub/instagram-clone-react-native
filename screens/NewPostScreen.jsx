@@ -10,5 +10,4 @@ const NewPostScreen = ({navigation}) => {
     )
 }
 
-
 export default NewPostScreen

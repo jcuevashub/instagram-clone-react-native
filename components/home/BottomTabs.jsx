@@ -27,7 +27,7 @@ export const bottomTabIcons = [
     },
     {
         name: 'Profile',
-        active: "https://i.pravatar.cc/300",
+        active: "https://i.pravatar.cc/150?img=3",
     },
 ]
 
