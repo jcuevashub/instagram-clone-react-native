@@ -1,4 +1,3 @@
-import { USERS } from "./user";
 
 export const POSTS = [
     {
@@ -6,7 +5,7 @@ export const POSTS = [
         "user": "michelle91",
         "likes": 567,
         "caption": "Read these participant capital trouble special college.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "amandaanderson",
@@ -27,7 +26,7 @@ export const POSTS = [
         "user": "lauraellis",
         "likes": 2283,
         "caption": "Mind sit vote first security finish space.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "charles31",
@@ -53,7 +52,7 @@ export const POSTS = [
         "user": "kristi11",
         "likes": 1381,
         "caption": "Perform exist bar development charge charge.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "charles31",
@@ -66,7 +65,7 @@ export const POSTS = [
         "user": "richard74",
         "likes": 8014,
         "caption": "But dog cover region crime past current.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "ostein",
@@ -79,7 +78,7 @@ export const POSTS = [
         "user": "ostein",
         "likes": 6348,
         "caption": "Realize of strategy hospital deep have.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "lauraellis",
@@ -92,7 +91,7 @@ export const POSTS = [
         "user": "barbarabradford",
         "likes": 8008,
         "caption": "Your call specific power.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "michelle91",
@@ -105,7 +104,7 @@ export const POSTS = [
         "user": "ucox",
         "likes": 8576,
         "caption": "Decade far back front like.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "ucox",
@@ -118,7 +117,7 @@ export const POSTS = [
         "user": "christopher06",
         "likes": 1054,
         "caption": "Of whose exactly few.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "charles31",
@@ -131,7 +130,7 @@ export const POSTS = [
         "user": "charles31",
         "likes": 1582,
         "caption": "Experience inside brother imagine maybe think service myself.",
-        "profile_picture":"https://i.pravatar.cc/300",
+        "profile_picture": "https://i.pravatar.cc/300",
         "comments": [
             {
                 "user": "michelle91",
@@ -139,6 +138,26 @@ export const POSTS = [
             }
         ]
     }
+]
+
+export const userPosts = [
+    {
+        "id": 1,
+        "url": "https://i.pravatar.cc"
+    },
+    {
+        "id": 2,
+        "url": "https://i.pravatar.cc"
+    },
+    {
+        "id": 3,
+        "url": "https://i.pravatar.cc"
+    },
+    {
+        "id": 4,
+        "url": "https://i.pravatar.cc"
+    },
+
 ]
 
 
