@@ -1,12 +1,10 @@
 import { View, Text, Pressable, StyleSheet, Alert, Image, FlatList, ScrollView, Dimensions, TouchableOpacity, Animated } from 'react-native'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import HeaderProfile from '../components/profile/HeaderProfile'
 import ProfilePic from '../components/profile/ProfilePic'
 import ProfileDashboard from '../components/profile/ProfileDashboard'
-import BottomTabs, { bottomTabIcons } from '../components/home/BottomTabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Divider } from 'react-native-elements'
 import { userPosts } from '../data/posts'
 
 const Tab = createMaterialTopTabNavigator();
@@ -22,9 +20,7 @@ const ProfileScreen = ({ navigation }) => {
             </View>
             <Bio />
             <BottomActions />
-            <BottomTabs icons={bottomTabIcons} navigation={navigation} />
             <StoryHighlightsContainer />
-            <Divider />
             <Tabs />
         </SafeAreaView>
     )
@@ -72,9 +68,7 @@ const StoryHighlightsContainer = () => {
     };
 
     return (
-        <View style={{
-            margin: 10,
-        }}>
+        <View style={{ margin: 10 }}>
             <View style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between'
@@ -84,7 +78,6 @@ const StoryHighlightsContainer = () => {
                     <Text style={{ color: 'white' }}>{expanded ? 'Fold' : 'Unfold'}</Text>
                 </TouchableOpacity>
             </View>
-
             <Animated.View style={[styles.collapsibleView, { height: animatedHeight }]}>
                 <Text style={{ color: 'white', fontWeight: '500' }}>Keep your favorite stories on your profile</Text>
                 <View style={{ alignItems: 'center', margin: 10 }}>
@@ -147,20 +140,6 @@ const Tags = () => (
 const Tabs = () => (
     <Tab.Navigator
         screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-                let iconName;
-                if (route.name === 'Posts') {
-                    iconName = require('../assets/data_grid_icon.png');
-                } else if (route.name === 'Reels') {
-                    iconName = require('../assets/instagram_reels_active_icon.png');
-                }
-                else if (route.name === 'Tags') {
-                    iconName = require('../assets/tag_icon.webp');
-                }
-
-                // You can return any component that you like here!
-                return <Image source={iconName} size={size} color={color} style={{ width: 25, height: 25, tintColor: 'white' }} />;
-            },
             tabBarShowIcon: true,
             tabBarStyle: { backgroundColor: 'black' },
             tabBarIndicatorStyle: {
@@ -168,13 +147,30 @@ const Tabs = () => (
                 height: 1,
             },
             tabBarLabel: () => null,
-        })}
-
-
-    >
-        <Tab.Screen name="Posts" component={Posts} />
-        <Tab.Screen name="Reels" component={Reels} />
-        <Tab.Screen name="Tags" component={Tags} />
+        })} >
+        <Tab.Screen name="Posts" component={Posts}
+            options={{
+                tabBarIcon: ({ focused }) => {
+                    return <Image key={1} source={require('../assets/data_grid_icon.png')}
+                        style={styles.iconSize} />
+                }
+            }}
+        />
+        <Tab.Screen name="Reels" component={Reels}
+            options={{
+                tabBarIcon: ({ focused }) => {
+                    return <Image key={1} source={require('../assets/instagram_reels_active_icon.png')}
+                        style={styles.iconSize} />
+                }
+            }}
+        />
+        <Tab.Screen name="Tags" component={Tags}
+            options={{
+                tabBarIcon: ({ focused }) => {
+                    return <Image key={1} source={require('../assets/tag_icon.webp')}
+                        style={styles.iconSize} />
+                }
+            }} />
     </Tab.Navigator>
 )
 
@@ -221,6 +217,11 @@ const styles = StyleSheet.create({
     button: {
         width: 30,
         backgroundColor: '#DDDDDD',
+    },
+    iconSize: {
+        width: 25,
+        height: 25,
+        tintColor: 'white'
     },
 });
 

@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 const SignedInStack = () => (
     <NavigationContainer>
         <Stack.Navigator
-            initialRouteName='ProfileScreen'
+            initialRouteName='HomeScreen'
             screenOptions={{ headerShown: false}}>
             <Stack.Screen name='SplashScreen' component={SplashScreen} />
             <Stack.Screen name='HomeScreen' component={HomeScreen} />
