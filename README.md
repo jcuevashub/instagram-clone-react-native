@@ -2,6 +2,8 @@
 
 **Instagram Clone** is a social media app built with **React Native**, designed to replicate the core features of Instagram, including photo uploads, user profiles, and interactive stories. This app supports iOS, Android, and web platforms, providing a responsive and engaging experience for users.
 
+<img src="https://github.com/user-attachments/assets/e13e891f-51fa-49fb-9ef4-98ca49af5836" alt="2" width="300">
+<img src="https://github.com/user-attachments/assets/6d3923db-24c2-4464-9714-788b4e82ceca" alt="2" width="300">
 <img src="https://github.com/user-attachments/assets/dbb88899-ed18-42cb-b0f7-08bb7289e0f4" alt="2" width="300">
 
 ## Features
