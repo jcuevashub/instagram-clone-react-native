@@ -1,61 +1,40 @@
-# My Universal React Project
+# Instagram Clone
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+**Instagram Clone** is a social media app built with **React Native**, designed to replicate the core features of Instagram, including photo uploads, user profiles, and interactive stories. This app supports iOS, Android, and web platforms, providing a responsive and engaging experience for users.
 
-## 🚀 How to use
+## Features
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` or `npm run start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+- **User Authentication**: Sign up, log in, and manage user sessions.
+- **Photo Uploads**: Upload, edit, and share photos and videos.
+- **Feed**: Browse posts from other users in the news feed.
+- **Stories**: View and interact with stories.
+- **User Profile**: View and edit personal profiles.
+- **Like, Comment & Share**: Interact with posts through likes, comments, and sharing options.
+- **Search**: Search for users, hashtags, and posts.
 
-  ## Packages
-  - yarn add react-native-elements
-  - yarn add react-native-safe-area-view 
-  - yarn add react-native-safe-area-context
-  - yarn add formik
-  - yarn add yup
-  - yarn add @react-navigation/native
-  - yarn add @react-navigation/stack
-  - yarn add react-native-gesture-handler
-  - yarn add valid-url
-  - yarn add email-validator
-  - yarn add react-native-linear-gradient
-  - npx expo install expo-linear-gradient
-  - yarn add @react-navigation/material-top-tabs react-native-tab-view
-  - npx expo install react-native-pager-view
-  - yarn add @react-navigation/bottom-tabs 
+## Tech Stack
 
-## Running/Modifying Native Code
+- **React Native**: Framework for building cross-platform mobile applications.
+- **React Navigation**: Navigation library for handling routing and navigation between screens.
+- **Formik & Yup**: Used for form management and validation.
+- **React Native Elements**: UI component library for building a modern interface.
+- **React Native Safe Area**: For ensuring content is correctly displayed on all devices with safe area support.
+- **React Native Gesture Handler**: Gesture support for smooth and interactive UI elements.
+- **Expo Linear Gradient**: For creating gradient backgrounds in the app.
+- **React Native Tab View**: For implementing top tab navigation.
+- **React Native Bottom Tabs**: For managing bottom tab navigation.
 
-You can generate native iOS and Android projects from your Expo config file (**app.json**/ **app.config.js**) by runnning `npx expo prebuild`. These native projects can then be compiled and run via XCode and Android Studio.
+## Installation
 
-> 💡 Learn more about [native code in Expo](https://docs.expo.dev/workflow/customizing/)
+### Requirements
 
-## Publishing
+- Node.js (v12 or later)
+- npm or yarn package manager
+- React Native development environment set up (Xcode for iOS, Android Studio for Android)
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.dev/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.dev/distribution/publishing-websites/).
+### Steps
 
-## 📝 Notes
+1. Clone the repository:
 
-- Learn more about [Universal React](https://docs.expo.dev/).
-- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
-# instagram-clone-react-native
+   ```bash
+   git clone https://github.com/jcuevashub/instagram-clone-react-native.git
